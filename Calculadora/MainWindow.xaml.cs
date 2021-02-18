@@ -106,5 +106,10 @@ namespace Calculadora
             lbl_pantalla.Content = float.Parse(lbl_pantalla.Content.ToString())*(-1);
 
         }
+
+        private void BorrarNumero(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
