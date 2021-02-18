@@ -1,0 +1,41 @@
+﻿<Window x:Class="Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculadora"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="557.2" Width="332.2" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbl_pantalla" Content="0" HorizontalAlignment="Center" Height="92" Margin="0,30,0.4,0" VerticalAlignment="Top" Width="318" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="56"/>
+        <Button Content="9" HorizontalAlignment="Left" Height="61" Margin="159,276,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="8" HorizontalAlignment="Left" Height="61" Margin="80,276,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="7" HorizontalAlignment="Left" Height="61" Margin="0,276,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="159,214,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="80,214,0,0" VerticalAlignment="Top" Width="79" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="62" Margin="0,214,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="C" HorizontalAlignment="Left" Height="62" Margin="159,152,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Click="Reseteo_Completo"/>
+        <Button Content="CE" HorizontalAlignment="Left" Height="62" Margin="80,152,0,0" VerticalAlignment="Top" Width="79" RenderTransformOrigin="-2.296,0.995" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="%" HorizontalAlignment="Left" Height="62" Margin="0,152,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="x" HorizontalAlignment="Left" Height="61" Margin="238,276,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Click="Operacion"/>
+        <Button Content="/" HorizontalAlignment="Left" Height="62" Margin="238,214,0,0" VerticalAlignment="Top" Width="80" FontSize="20" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Click="Operacion"/>
+        <Button Content="Img back" HorizontalAlignment="Left" Height="62" Margin="238,152,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}"/>
+        <Button Content="," HorizontalAlignment="Left" Height="61" Margin="159,461,0,-1.2" VerticalAlignment="Top" Width="80" FontSize="18" FontWeight="Bold" Click="Añadir_coma" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="0" HorizontalAlignment="Left" Height="61" Margin="80,461,0,-1.2" VerticalAlignment="Top" Width="79" FontSize="18" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="+/-" HorizontalAlignment="Left" Height="61" Margin="0,461,0,-1.2" VerticalAlignment="Top" Width="80" FontSize="18" Click="Cambiar_signo" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="3" HorizontalAlignment="Left" Height="62" Margin="159,399,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="2" HorizontalAlignment="Left" Height="62" Margin="80,399,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="1" HorizontalAlignment="Left" Height="62" Margin="0,399,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="6" HorizontalAlignment="Left" Height="62" Margin="159,337,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="5" HorizontalAlignment="Left" Height="62" Margin="80,337,0,0" VerticalAlignment="Top" Width="79" RenderTransformOrigin="-2.296,0.995" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="4" HorizontalAlignment="Left" Height="62" Margin="0,337,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
+        <Button Content="=" HorizontalAlignment="Left" Height="61" Margin="238,461,0,-1.2" VerticalAlignment="Top" Width="80" Background="CornflowerBlue" FontSize="20" Click="Resultado"/>
+        <Button Content="+" HorizontalAlignment="Left" Height="62" Margin="238,399,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Click="Operacion"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="62" Margin="238,337,0,0" VerticalAlignment="Top" Width="80" FontSize="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Click="Operacion"/>
+        <Label x:Name="lbl_resumen" Content="" HorizontalAlignment="Center" Height="30" Margin="0,0,0.4,0" VerticalAlignment="Top" Width="318" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Top"/>
+
+    </Grid>
+</Window>
