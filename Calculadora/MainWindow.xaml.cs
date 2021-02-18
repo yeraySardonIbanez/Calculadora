@@ -23,6 +23,7 @@ namespace Calculadora
         private float primera_parte=int.MinValue;
         private float segunda_parte = 0;
         private string operacon_guardada;
+        private string subtotal = "0";
         public MainWindow()
         {
             InitializeComponent();
@@ -31,13 +32,14 @@ namespace Calculadora
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button bt = (Button)sender;
-            lbl_pantalla.Content =(lbl_pantalla.Content.ToString()!="0")? lbl_pantalla.Content+""+ bt.Content: bt.Content;
+            lbl_pantalla.Content =(lbl_pantalla.Content.ToString()!=subtotal)? lbl_pantalla.Content+""+ bt.Content: bt.Content;
 
         }
 
         private void Operacion(object sender, RoutedEventArgs e)
         {
             Button bt = (Button)sender;
+            
             if (operacon_guardada == null) {
                 operacon_guardada = bt.Content.ToString();
                 primera_parte = float.Parse(lbl_pantalla.Content.ToString());
@@ -46,9 +48,16 @@ namespace Calculadora
             }
             else
             {
+                if (operacon_guardada.ToCharArray().First() == lbl_resumen.Content.ToString().Last())
+                {
+                    operacon_guardada = bt.Content.ToString();
+                    lbl_resumen.Content=lbl_resumen.Content.ToString().Substring(0, lbl_resumen.Content.ToString().Length-1);
+                    lbl_resumen.Content = primera_parte.ToString() + " " + operacon_guardada;
+                    return;
+                }
                 realizar_operacion();
-                lbl_resumen.Content = "0";
                 operacon_guardada = bt.Content.ToString();
+                subtotal = lbl_pantalla.Content.ToString();
                 lbl_resumen.Content = lbl_resumen.Content.ToString() + " " + segunda_parte.ToString() + " " + operacon_guardada;
             }
 
@@ -60,6 +69,7 @@ namespace Calculadora
             if (operacon_guardada != null)
             {
                 realizar_operacion();
+                lbl_resumen.Content = lbl_resumen.Content.ToString() + " " + segunda_parte.ToString();
             }
         }
 
@@ -106,5 +116,6 @@ namespace Calculadora
             lbl_pantalla.Content = float.Parse(lbl_pantalla.Content.ToString())*(-1);
 
         }
+
     }
 }
