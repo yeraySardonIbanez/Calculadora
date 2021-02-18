@@ -38,10 +38,20 @@ namespace Calculadora
         private void Operacion(object sender, RoutedEventArgs e)
         {
             Button bt = (Button)sender;
-            operacon_guardada= bt.Content.ToString();
-            primera_parte= float.Parse(lbl_pantalla.Content.ToString());
-            lbl_pantalla.Content = "0";
-            lbl_resumen.Content = primera_parte.ToString() + " " + operacon_guardada; 
+            if (operacon_guardada == null) {
+                operacon_guardada = bt.Content.ToString();
+                primera_parte = float.Parse(lbl_pantalla.Content.ToString());
+                lbl_pantalla.Content = "0";
+                lbl_resumen.Content = primera_parte.ToString() + " " + operacon_guardada;
+            }
+            else
+            {
+                realizar_operacion();
+                lbl_resumen.Content = "0";
+                operacon_guardada = bt.Content.ToString();
+                lbl_resumen.Content = lbl_resumen.Content.ToString() + " " + segunda_parte.ToString() + " " + operacon_guardada;
+            }
+
         }
 
         private void Resultado(object sender, RoutedEventArgs e)
@@ -49,28 +59,32 @@ namespace Calculadora
 
             if (operacon_guardada != null)
             {
-                segunda_parte = float.Parse(lbl_pantalla.Content.ToString());
-                switch (operacon_guardada)
-                {
-                        case "+":
+                realizar_operacion();
+            }
+        }
 
-                            lbl_pantalla.Content = primera_parte + segunda_parte;
-                            primera_parte = float.Parse(lbl_pantalla.Content.ToString());
-                            break;
-                        case "-":
-                            lbl_pantalla.Content = primera_parte - segunda_parte;
-                            primera_parte = float.Parse(lbl_pantalla.Content.ToString());
-                            break;
-                        case "x":
-                            lbl_pantalla.Content = primera_parte * segunda_parte;
-                            primera_parte = float.Parse(lbl_pantalla.Content.ToString());
-                            break;
-                        case "/":
-                            lbl_pantalla.Content =(float) primera_parte / segunda_parte;
-                            primera_parte = float.Parse(lbl_pantalla.Content.ToString());
-                            break;
-                    }
-                }
+        private void realizar_operacion()
+        {
+            segunda_parte = float.Parse(lbl_pantalla.Content.ToString());
+            switch (operacon_guardada)
+            {
+                case "+":
+                    lbl_pantalla.Content = primera_parte + segunda_parte;
+                    primera_parte = float.Parse(lbl_pantalla.Content.ToString());
+                    break;
+                case "-":
+                    lbl_pantalla.Content = primera_parte - segunda_parte;
+                    primera_parte = float.Parse(lbl_pantalla.Content.ToString());
+                    break;
+                case "x":
+                    lbl_pantalla.Content = primera_parte * segunda_parte;
+                    primera_parte = float.Parse(lbl_pantalla.Content.ToString());
+                    break;
+                case "/":
+                    lbl_pantalla.Content = (float)primera_parte / segunda_parte;
+                    primera_parte = float.Parse(lbl_pantalla.Content.ToString());
+                    break;
+            }
         }
 
         private void Reseteo_Completo(object sender, RoutedEventArgs e)

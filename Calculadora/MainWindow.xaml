@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="lbl_pantalla" Content="0" HorizontalAlignment="Center" Height="92" Margin="0,30,0.4,0" VerticalAlignment="Top" Width="318" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="56"/>
+        <Label x:Name="lbl_pantalla" Content="0" HorizontalAlignment="Center" Height="117" Margin="4,30,3.6,0" VerticalAlignment="Top" Width="318" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="56"/>
         <Button Content="9" HorizontalAlignment="Left" Height="61" Margin="159,276,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
         <Button Content="8" HorizontalAlignment="Left" Height="61" Margin="80,276,0,0" VerticalAlignment="Top" Width="79" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
         <Button Content="7" HorizontalAlignment="Left" Height="61" Margin="0,276,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold" FontSize="18" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
